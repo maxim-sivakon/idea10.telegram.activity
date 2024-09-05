@@ -24,7 +24,8 @@ $tabs = [
 
 $options = [
     'general' => [
-
+        ["bot_name", GetMessage("IDEA10_BOT_NAME"), ["text", 15]],
+        ["bot_token", GetMessage("IDEA10_BOT_TOKEN"), ["text", 15]]
     ]
 ];
 
