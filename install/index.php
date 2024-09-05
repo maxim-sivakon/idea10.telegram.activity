@@ -38,31 +38,31 @@ class idea10_telegram_activity extends CModule
     function DoInstall()
     {
         ModuleManager::registerModule(self::MODULE_ID);
-
         $this->InstallActivity();
+
+        return true;
     }
 
     function DoUninstall()
     {
         $this->UnInstallActivity();
-
         ModuleManager::unRegisterModule(self::MODULE_ID);
+
+        return true;
     }
 
     function InstallActivity()
     {
-//        $documentRoot = Application::getDocumentRoot();
-//
-//        CopyDirFiles(
-//            __DIR__.'/components',
-//            $documentRoot.'/local/components',
-//            true,
-//            true
-//        );
+        // TODO: на подготовку модля в маркетплайс нужно сменить пути на ядро.
+        CopyDirFiles($_SERVER[ 'DOCUMENT_ROOT' ].'/local/modules/'.self::MODULE_ID.'/install/activities/',
+            $_SERVER[ 'DOCUMENT_ROOT' ].'/local/activities', true, true);
+        return true;
     }
 
     function UnInstallActivity()
     {
-//        DeleteDirFilesEx('/local/components/');
+        // TODO: на подготовку модля в маркетплайс нужно сменить пути на ядро.
+        DeleteDirFilesEx('/local/activities/idea10sendtelegrammessageactivity');
+        return true;
     }
 }
