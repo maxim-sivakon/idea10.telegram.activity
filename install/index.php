@@ -62,7 +62,7 @@ class idea10_telegram_activity extends CModule
     function UnInstallActivity()
     {
         // TODO: на подготовку модля в маркетплайс нужно сменить пути на ядро.
-        DeleteDirFilesEx('/local/activities/idea10sendtelegrammessageactivity');
+        DeleteDirFilesEx($_SERVER[ 'DOCUMENT_ROOT' ].'/local/activities/idea10sendtelegrammessageactivity');
         return true;
     }
 }
